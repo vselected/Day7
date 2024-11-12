@@ -44,3 +44,34 @@ print(square(6))
 
 print(list(map(lambda  num:num**2,my_numbers)))
 
+#Nested Statements and Scope
+
+#GLOBAL
+name = "THIS IS A GLOBAL STRING"
+
+def greet():
+    # ENCLOSING
+    #name = "Sammy"
+
+    def hello():
+        #name = "IM A LOCAL"
+        print("Hello "+name)
+
+    hello()
+
+greet()
+
+
+x = 50
+
+def func():
+    global x
+    print(f"X is {x}")
+
+    #LOCAL REASSIGNMENT ON A GLOBAL VARIABLE!
+    x = "New Value"
+    print(f"I just locally changed global X to {x}")
+
+func()
+
+
